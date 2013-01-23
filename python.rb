@@ -19,6 +19,7 @@ end
 # determining if we have python or not.
 if count > 0 then
   Facter.add(:has_python) { setcode { "TRUE" } }
+#  Facter.add(:python_version) { setcode { `python -V`.gsub("Python ","").split(" ").shift } }    
 else
   Facter.add(:has_python) { setcode { "FALSE" } }  
 end

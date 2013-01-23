@@ -20,6 +20,7 @@ end
 # determining if we have ruby or not.
 if count > 0 then
   Facter.add(:has_ruby) { setcode { "TRUE" } }
+  Facter.add(:ruby_version) { setcode { `ruby --version`.gsub("ruby ","").split(" ").shift } }    
 else
   Facter.add(:has_ruby) { setcode { "FALSE" } }  
 end
@@ -41,6 +42,7 @@ if count > 0 then
   # determining if we have RVM or not.
   if rvmcount > 0 then
     Facter.add(:has_rvm) { setcode { "TRUE" } }
+    Facter.add(:rvm_version) { setcode { `rvm -v`.gsub("rvm ","").split(" ").shift } }    
   else
     Facter.add(:has_rvm) { setcode { "FALSE" } }  
   end
