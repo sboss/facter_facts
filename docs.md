@@ -10,10 +10,12 @@ determines if you have git installed or not (path dependent).
 
 perl.rb
 
-determines if you have perl installed or not (path dependent).
+determines if you have perl installed or not (path dependent).  if you have perl installed it will check to see if you have perlbrew installed (path dependent).
 
 	has_perl = { TRUE, FALSE }
+	has_perlbrew = { TRUE, FALSE }
 	perl = { *path_to_perl* }
+	perlbrew = { *path_to_perlbrew* }
 
 
 python.rb

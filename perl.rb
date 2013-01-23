@@ -2,6 +2,7 @@ require 'facter'
 
 # count is used to determine if we have perl or not.
 count=0
+perlbrewcount=0
 # 
 # checking the path for perl
 for p in ENV[ 'PATH' ].split(':')
@@ -21,4 +22,27 @@ if count > 0 then
   Facter.add(:has_perl) { setcode { "TRUE" } }
 else
   Facter.add(:has_perl) { setcode { "FALSE" } }  
+end
+
+# determine if we have perlbrew or not.
+if count > 0 then
+  for p in ENV[ 'PATH' ].split(':')
+    p = p + "/perlbrew"
+    if File.exists?(p) then
+      Facter.add(:perlbrew) { setcode { p } }
+      perlbrewcount=perlbrewcount+1
+      break
+    else
+      # not found.
+    end
+  
+  end
+
+  # determining if we have perlbrew or not.
+  if perlbrewcount > 0 then
+    Facter.add(:has_perlbrew) { setcode { "TRUE" } }
+  else
+    Facter.add(:has_perlbrew) { setcode { "FALSE" } }  
+  end
+  
 end
