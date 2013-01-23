@@ -7,6 +7,7 @@ determines if you have git installed or not (path dependent).
 
 	has_git = { TRUE, FALSE }
 	git = { *path_to_git* }
+	git_version = { *git_version_number* }
 
 perl.rb
 
