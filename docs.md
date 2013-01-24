@@ -37,3 +37,11 @@ determines if you have ruby installed or not (path dependent).  if you have ruby
 	rvm = { *path_to_rvm* }
 	ruby_version = { *ruby_version_number* }
 	rvm_version = { *rvm_version_number* }
+
+sqlite3.rb
+
+determines if you have sqlite3 installed or not (path dependent).
+
+	has_sqlite3 = { TRUE, FALSE }
+	sqlite3 = { *path_to_sqlite3* }
+	sqlite3_version = { *sqlite3_version_number* }
