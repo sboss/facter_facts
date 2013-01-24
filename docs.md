@@ -45,3 +45,14 @@ determines if you have sqlite3 installed or not (path dependent).
 	has_sqlite3 = { TRUE, FALSE }
 	sqlite3 = { *path_to_sqlite3* }
 	sqlite3_version = { *sqlite3_version_number* }
+	
+node.rb
+
+determines if you have nodeJS installed or not (path dependent).  if you have nodeJS installed it will check to see if you have npm installed (path dependent).
+
+	has_nodejs = { TRUE, FALSE }
+	has_npm = { TRUE, FALSE }
+	nodejs = { *path_to_nodejs* }
+	npm = { *path_to_npm* }
+	nodejs_version = { *nodejs_version_number* }
+	npm_version = { *npm_version_number* }
